@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+    <script src="./script/jquery-3.6.1.js"></script>
+    <script src="./script/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/125c566522.js" crossorigin="anonymous"></script>
+    
+    <style>
+        *{ margin:0; padding:0; text-decoration:none;}
+        body{    width: 100%; height: 100vh; overflow-x: hidden;  }
+        
+         
+        .top{   width: 100%; height: 120px; background-color: white; background-image: url(./cgv_image/logoRed\ \(1\).png); background-repeat: no-repeat; 
+        background-size: 120px;  background-position: 120px 30px; }
+        .top-wrapper{ display:flex; padding-right: 100px; 
+        flex-wrap: nowrap;}
+        
+        .culture p{ padding-top:60px; padding-left: 240px; }
+
+        .card img{ padding-top:40px; padding-left: 250px;}
+
+        .login img{ width: 40px; height: 40px; padding-top: 35px; padding-left: 20px;}
+
+        .login a:nth-child(1){ margin-left: 30px;}
+
+        
+
+
+        .gnb{ display:flex; padding-left: 100px; gap:60px; height: 50px; width:100%; background-color:white; flex-wrap: wrap;
+          border-bottom: 1px solid red; border-top: 1px solid lightgray;
+         }
+        li{ list-style: none; width: 50px; padding-top: 13px;}
+
+        li a{ text-decoration: none; color: black;
+         }
+
+        .gnb>li>a{ font-weight: bold;}
+
+        .submenu>li:nth-child(1)>a{ font-weight: bold;}
+
+        .gnb>li:nth-child(3)>a{
+            color:red;
+        }
+
+        .search{ display:flex; gap: 5px; align-items: center;  width: 100px; padding-left: 200px;}
+
+        .search i{ font-size: 25px; padding-right: 3px; color:black;}
+
+        .search p{ color: lightgray; font-size: 20px; font-weight: lighter; padding-left: 4px; }
+
+         #text{ height: 25px; border: 0px solid black;}
+
+
+        .main-section{ 
+            width: 100%; height: 500px; background-color: beige;
+            border-top: 1px solid red;
+        }
+         
+
+        .chart{ width: 100%; height: 450px; background-color: whitesmoke; display:flex; gap: 15px; flex-wrap: wrap;}
+
+         
+
+        .movie-chart{ display:flex; padding-top: 40px; padding-left: 100px; gap: 10px;}
+        .movie-chart2 a{ color:rgb(105, 99, 99); font-weight: normal ;
+         }
+        .movie-chart1 a{color: black;}
+        .chart p{ color: lightgray;}
+
+        .event, 
+        .special{ width: 100%; height: 430px;}
+
+        .special{ background-color: whitesmoke;
+        }
+
+        .box{ width: 170px; height:240px; border: 0px solid black;
+        border-radius: 10px;  
+        
+        }
+
+        .chart-box{ display:flex;  gap: 40px; flex-wrap:nowrap;
+        align-items: center; padding-left: 100px; padding-bottom:110px; }
+
+        .box01{ 
+        background-image:  linear-gradient( to bottom, 
+        rgba(69, 64, 64, 0) 20%,
+        rgba(35, 33, 33, 0.472) 50%,
+        rgba(5, 5, 5, 0.711) 90%),
+        url(./cgv_image/avatar.jpg);
+        background-size: cover;}
+
+        
+        .box02{ background-image:  linear-gradient( to bottom, 
+            rgba(12, 10, 10, 0) 20%,
+        rgba(35, 33, 33, 0.472) 50%,
+        rgba(5, 5, 5, 0.711) 90%),url(./cgv_image/slam.jpg);
+        background-size: cover;}
+        .box03{ background-image:  linear-gradient( to bottom, 
+        rgba(69, 64, 64, 0) 20%,
+        rgba(35, 33, 33, 0.472) 50%,
+        rgba(5, 5, 5, 0.711) 90%),url(./cgv_image/hero.jpg);
+        background-size:cover;}
+        .box04{ background-image:  linear-gradient( to bottom, 
+        rgba(69, 64, 64, 0) 20%,
+        rgba(35, 33, 33, 0.472) 50%,
+        rgba(5, 5, 5, 0.711) 90%),url(./cgv_image/cat.jpg);
+        background-size: cover;}
+        .box05{ background-image:  linear-gradient( to bottom, 
+        rgba(69, 64, 64, 0) 20%,
+        rgba(35, 33, 33, 0.472) 50%,
+        rgba(5, 5, 5, 0.711) 90%),url(./cgv_image/meet.jpg);
+        background-size: cover;}
+
+        .submenu{ width: 100vh; height:300px; background-color:white; margin-top: 22px;
+        display:none; transform: translateX(-80px);
+    }
+        .submenu>li{ display:block; width: 80px; }
+
+
+        
+
+        .box h1{ color:white; font-size: 50px; 
+        font-family:'Times New Roman', Times, serif;
+        padding: 190px 200px 0 10px;}
+        
+
+        .last{ width: 100%; height:800px; background-color: white;}
+
+        footer{ width:100%; height: 200px; background-color: whitesmoke;  }
+
+        .last-banner img{ height:250px;  size: cover; width: 100%;}
+
+        .event-box { position:absolute;
+            width: 2245px; display:flex; gap: 25px;  
+            padding-top: 30px; background-color: white; 
+            margin-left:100px;
+            transition: 0.5s;
+         }
+         .event h2{ display:inline-block; padding-top: 70px; padding-left: 130px; 
+        }
+        .event #button1{ display:inline-block; 
+            transform: translateY(6px);
+            margin-left: 800px;  cursor: pointer;
+            background-color: white; background-image: url(./cgv_image/play.png);
+            background-repeat: no-repeat; background-size: 12px;
+            background-position: center center;
+            width: 30px; height:30px; border: 1px solid lightgray; border-radius: 20px;}
+
+        .event{ position:relative;
+        width: 1110px; overflow: hidden;}
+
+        .event-wrapper:nth-child(4){
+            margin-left: 75px;
+        }
+        
+
+
+        #button3{   
+            transform: rotate('45deg');
+            position:absolute; 
+             transform: translate(80px, 140px);
+            opacity: 0.8; cursor: pointer;
+            margin-top: 80px; z-index: 1;
+            box-shadow: 5px 5px 5px rgba(61, 57, 57, 0.397);
+            width: 40px; height:40px; border-radius: 20px;
+             background-color: white; background-image: url(./cgv_image/arrow.png);
+            background-repeat: no-repeat; border:0px;
+            background-position: center center;
+            background-size: 10px; }
+        
+        #button2{  
+            transform: translate( 1090px, -210px);
+            opacity: 0.8; cursor: pointer;
+             z-index: 1;
+            box-shadow: 5px 5px 5px rgba(61, 57, 57, 0.397);
+            width: 40px; height:40px; border-radius: 20px;
+             display:inline-block; background-color: white; background-image: url(./cgv_image/arrow.png);
+            background-repeat: no-repeat; border:0px;
+            background-position: center center;
+            background-size: 10px; }
+
+        .ebox img,
+        .ebox { width: 320px; height:200px;  
+         border-radius: 10px; transition-duration: 0.5s;}
+
+         .ebox{  overflow: hidden;
+                }
+
+        .event-wrapper h4{ display:block; color: black;
+         width:320px; text-align: left; padding-top: 10px;}
+
+         .event-wrapper h5{ color: gray; width: 320px; text-align: left;
+         }
+
+        .ebox img:hover {
+             transform: scale(1.1);
+        }
+
+         .special{ display:flex; }
+         .special h2{ padding-top: 70px; padding-left: 130px;}
+
+         .tab-image{ position:relative;}
+
+        
+        .tab-image img{ width:480px; height:250px; position:absolute; }
+
+         .tab-list,
+         .tab-image{ margin-top: 120px;}
+
+          
+
+          
+         #tab2, #tab3, #tab4{ display: none;}
+
+
+        .tab-list>li{ display: block; width: 420px; border-bottom: 1px solid lightgray; 
+        text-align: left; padding-left: 20px; padding-bottom: 15px; font-weight: normal; font-size: 20px;
+        margin-left: 550px;height: 30px; }
+
+        .tab-list>li:nth-child(1){ border-top: 1px solid lightgray;}
+
+        .tab-list li:hover{
+            font-weight:bold;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+
+
+        .tab-list,
+        .tab-image{
+            transform: translateX(-70px);
+        }
+
+
+
+
+
+
+        .info{ border-bottom: 1px solid lightgray;}
+        .info-list{ display: flex; gap:20px;  justify-content: center; }
+        .info-list li a{ display: block; font-size: 12px; font-weight: bold;
+        color: gray;  }
+
+
+
+      
+
+       
+
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <div class="top-wrapper">
+                <div class="culture">
+                    <p>C U L T U R E P L E X</p>
+                </div>
+                <div class="card">
+                    <a href="#"><img src="./cgv_image/16727156341060 (1).png" alt=""></a>
+                </div>
+                <div class="login">
+                    <a href="#"><img src="./cgv_image/loginPassword (1).png" alt=""></a>
+                    
+                    
+                    <a href="#"><img src="./cgv_image/loginJoin (1).png" alt=""></a>
+                    <a href="#"><img src="./cgv_image/loginMember (1).png" alt=""></a>
+                    <a href="#"><img src="./cgv_image/loginCustomer (1).png" alt=""></a>
+                </div>
+            </div>
+
+            
+        </div>
+        <nav>
+            <div class="menu">
+                <ul class="gnb">
+                    <li><a href="#">영화</a>
+                        <ul class="submenu">
+                            <li><a href="#">영화</a></li>
+                            <li><a href="#">무비차트</a></li>
+                            <li><a href="#">아트하우스</a></li>
+                            <li><a href="#">ICECON</a></li>
+
+                        </ul>
+                    
+                    </li>
+                    
+        
+                    <li><a href="#">극장</a>
+                        <ul class="submenu">
+                            <li><a href="#">극장</a></li>
+                            <li><a href="#">cgv극장</a></li>
+                            <li><a href="#">특별관</a></li>
+                             
+
+                        </ul>
+                    
+                    </li>
+                         
+                    <li><a href="#">예매</a>
+                        <ul class="submenu">
+                            <li><a href="#">예매</a></li>
+                            <li><a href="#">빠른예매</a></li>
+                            <li><a href="#">상영스케줄</a></li>
+                            <li><a href="#">EnglishTicketing</a></li>
+                            <li><a href="#">EnglishSchedule</a></li>
+
+                        </ul>
+                        
+                    </li>
+                    <li><a href="#">스토어</a>
+                        <ul class="submenu">
+                            <li><a href="#">영화</a></li>
+                            <li><a href="#">무비차트</a></li>
+                            <li><a href="#">아트하우스</a></li>
+                            <li><a href="#">ICECON</a></li>
+
+                        </ul>
+                         
+                    </li>
+                    <li><a href="#">이벤트</a>
+                        <ul class="submenu">
+                            <li><a href="#">영화</a></li>
+                            <li><a href="#">무비차트</a></li>
+                            <li><a href="#">아트하우스</a></li>
+                            <li><a href="#">ICECON</a></li>
+
+                        </ul>
+                         
+                    </li>
+                    <li><a href="#">혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">영화</a></li>
+                            <li><a href="#">무비차트</a></li>
+                            <li><a href="#">아트하우스</a></li>
+                            <li><a href="#">ICECON</a></li>
+
+                        </ul>
+                         
+                    </li>
+                    <div class="search">
+                        <p>|</p>
+                        <input type="text" id="text">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <p>|</p>
+                    </div>
+                    
+        
+                </ul>
+                
+                
+            </div>
+
+            <div class="search"></div>
+        </nav>
+        <div class="main-section">
+             
+        </div>
+
+        <div class="sub-section">
+            <div class="chart">
+                <div class="movie-chart">
+                    <h2 class="movie-chart1">
+                        <a href="#">무비차트</a> 
+                    </h2>
+                    <p>|</p>
+                    <h2 class="movie-chart2">
+                        <a href="#">상영예정작</a> 
+                    </h2>
+                </div>    
+                <div class="chart-box">
+                    <div class="box box01">
+                        
+                        
+                        <h1>1</h1>
+                         
+                    </div>
+                     
+                    <div class="box box02">
+                        <h1>2</h1>
+                    </div>
+                    <div class="box box03">
+                        <h1>3</h1>
+                    </div>
+                    <div class="box box04">
+                        <h1>4</h1>
+                    </div>
+                    <div class="box box05">
+                        <h1>5</h1>
+                    </div>
+                </div>
+            </div>
+            <button id="button3"></button>
+            <div class="event">
+                <h2>EVENT</h2>
+                <button id="button1"></button>
+                 
+                <div class="event-box">
+                   
+                    
+                    <div class="event-wrapper">
+                        <div class="ebox ebox01">
+                            <a href="#"><img src="./cgv_image/cgvplus.jpg" alt=""></a>
+                            
+                        </div>
+                        <a href="#"><h4>CGV x TVING 월정기 혜택[CGV PLUS]</h4></a>
+                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
+                    </div>
+                    
+                    <div class="event-wrapper">
+                        <div class="ebox ebox02">
+                            <a href="#"><img src="./cgv_image/sale.jpg" alt=""></a>
+                        </div>
+                        <a href="#"><h4>우리동네 CGV 카카오톡 채널 추가하자!</h4></a>
+                        <a href="#"><h5>2022.12.19~2023.01.17</h5></a>
+                    </div>
+
+
+                    <div class="event-wrapper">
+                        <div class="ebox ebox03">
+                            <a href="#"><img src="./cgv_image/filmmark.jpg" alt=""></a>
+                        </div>
+                        <a href="#"><h4>[영웅] 필름마크</h4></a>
+                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
+                    </div>
+                    
+
+                    <div class="event-wrapper">
+                        <div class="ebox ebox04">
+                            <a href="#"><img src="./cgv_image/3000.jpeg" alt=""></a>
+                        </div>
+                        <a href="#"><h4>[3000년의 기다림]필름마크</h4></a>
+                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
+                    </div>
+
+                    <div class="event-wrapper">
+                        <div class="ebox ebox05">
+                            <a href="#"><img src="./cgv_image/switch.jpeg" alt=""></a>
+                        </div>
+                        <a href="#"><h4>[스위치]필름마크</h4></a>
+                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
+                    </div>
+
+                    <div class="event-wrapper">
+                        <div class="ebox ebox06">
+                            <a href="#"><img src="./cgv_image/vip.jpg" alt=""></a>
+                        </div>
+                        <a href="#"><h4>[CGV VIP] VIP PLAY</h4></a>
+                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
+                    </div>
+                    
+                    
+                </div>
+                
+                
+            </div>
+            <button id="button2"></button>
+
+            <div class="special">
+                <h2>특별관</h2>
+                <div class="tab-image">
+                     
+                    <a href="#"><img src="./cgv_image/tab1.png" alt=""></a>
+                     
+                    <!--<a href="#" id="tab2"><img src="./cgv_image/tab2.png" alt=""></a>
+                    <a href="#" id="tab3"><img src="./cgv_image/tab3.png" alt=""></a>
+                    <a href="#" id="tab4"><img src="./cgv_image/tab4.png" alt=""></a>-->
+                    
+                </div>
+                <ul class="tab-list">
+                    <li><a href="#">SUITE CINEMA</a></li>
+                    <li><a href="#">CINE & LIVINGROOM</a></li>
+                    <li><a href="#">4DX</a></li>
+                    <li><a href="#">CINE de CHEF</a></li>
+                </ul>
+
+            </div>
+
+            <div class="last"></div>
+            
+        </div>
+        <div class="last-banner">
+            <a href="#"><img src="./cgv_image/banner.png" alt=""></a>
+        </div>
+        <footer>
+            <div class="info">
+                <ul class="info-list">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">IR</a></li>
+                    <li><a href="#">채용정보</a></li>
+                    <li><a href="#">광고/제휴</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">편성기준</a></li>
+                    <li><a href="#">개인정보처리지침</a></li>
+                    <li><a href="#">법적고지</a></li>
+                    <li><a href="#">이메일주소무단수집거부</a></li>
+                    <li><a href="#">윤리경영</a></li>
+                    <li><a href="#">사이버감사실</a></li>
+                </ul>
+            </div>
+            <div class="address"></div>
+        </footer>
+    </div>
+
+    
+    
+
+    <script>
+
+        const menu = $(".menu>ul>li");
+        const submenu = $(".menu>ul>li>.submenu");
+
+        menu.mouseover(function(){
+            submenu.stop().slideDown(300);
+        })
+
+        menu.mouseout(function(){
+            submenu.stop().slideUp(300);
+        })
+
+        $(function(){
+            $(window).scroll(function(){
+            var num = $(this).scrollTop();
+            
+            if(num>25){
+                $(".gnb").css({
+                    'top':0,
+                    "position": "fixed",
+                    'background-image': 'linear-gradient(to right, rgb(215, 67, 87), rgb(241,79,58) 59%, rgb(239, 100, 47))',
+                    "z-index":"1"
+
+                })
+                $(".gnb>li>a").css({
+                    'color':'white'
+                })
+                
+                
+            }
+            else{
+                $(".gnb").css("position","static");
+                $(".gnb").css({
+                    'background-image':'none',
+                    'border-bottom' : '1px solid red'
+                })
+                $(".gnb>li>a").css({
+                    'color':'black'
+                })
+                $(".gnb>li:nth-child(3)>a").css({
+                    'color':'#fb4357'
+                })
+                
+            }
+        });
+
+    });
+    
+    </script>
+    <script>
+
+
+
+        const list = $(".tab-list li");
+        list.on("mouseover", function(){
+            const num = $(this).index();
+            const img = $(".tab-image img")
+             
+            const path = `./cgv_image/tab${num+1}.png`;
+            img.attr('src', path);
+
+            
+
+        })
+
+    </script>
+
+    <script>
+
+        const button2 = document.querySelector('#button2');
+        const eventBox = document.querySelector('.event-box');
+        const event = document.querySelector('.event')
+
+        const wid = eventBox.getBoundingClientRect().width;
+        const eWid = event.getBoundingClientRect().width;
+
+        
+
+        button2.addEventListener('click',function(){
+
+            
+            let x = -eWid;
+
+            console.log(x);
+
+
+            eventBox.style.transform = 'translate('+ x +'px)';
+
+        })
+
+        const button3 = document.querySelector('#button3');
+
+        button3.addEventListener('click', function(){
+
+            
+            
+            let y = 0;
+
+            eventBox.style.transform = 'translate(' + y + 'px)';
+            
+        })
+
+
+
+        
+
+
+
+        
+      
+    </script>
+
+     
+     
+</body>
+
+
+</html>
