@@ -12,7 +12,7 @@
     
     <style>
         *{ margin:0; padding:0; text-decoration:none;}
-        body{    width: 100%; height: 100vh; overflow-x: hidden;  }
+        body{  overflow-x: hidden; width: 100%; height: 100vh;  }
         
          
         .top{   width: 100%; height: 120px; background-color: white; background-image: url(./cgv_image/logoRed\ \(1\).png); background-repeat: no-repeat; 
@@ -49,7 +49,7 @@
 
         .search{ display:flex; gap: 5px; align-items: center;  width: 100px; padding-left: 200px;}
 
-        .search i{ font-size: 25px; padding-right: 3px; color:black;}
+        .search i{ font-size: 25px; padding-right: 3px;}
 
         .search p{ color: lightgray; font-size: 20px; font-weight: lighter; padding-left: 4px; }
 
@@ -135,67 +135,17 @@
 
         .last-banner img{ height:250px;  size: cover; width: 100%;}
 
-        .event-box { position:absolute;
-            width: 2245px; display:flex; gap: 25px;  
-            padding-top: 30px; background-color: white; 
-            margin-left:100px;
-            transition: 0.5s;
+        .event-box { display:flex; gap: 25px; justify-content: center; 
+            padding-top: 30px;
          }
-         .event h2{ display:inline-block; padding-top: 70px; padding-left: 130px; 
+         .event h2{ padding-top: 70px; padding-left: 130px; 
         }
-        .event #button1{ display:inline-block; 
-            transform: translateY(6px);
-            margin-left: 800px;  cursor: pointer;
-            background-color: white; background-image: url(./cgv_image/play.png);
-            background-repeat: no-repeat; background-size: 12px;
-            background-position: center center;
-            width: 30px; height:30px; border: 1px solid lightgray; border-radius: 20px;}
 
-        .event{ position:relative;
-        width: 1110px; overflow: hidden;}
-
-        .event-wrapper:nth-child(4){
-            margin-left: 75px;
-        }
-        
-
-
-        #button3{   
-            transform: rotate('45deg');
-            position:absolute; 
-             transform: translate(80px, 140px);
-            opacity: 0.8; cursor: pointer;
-            margin-top: 80px; z-index: 1;
-            box-shadow: 5px 5px 5px rgba(61, 57, 57, 0.397);
-            width: 40px; height:40px; border-radius: 20px;
-             background-color: white; background-image: url(./cgv_image/arrow.png);
-            background-repeat: no-repeat; border:0px;
-            background-position: center center;
-            background-size: 10px; }
-        
-        #button2{  
-            transform: translate( 1090px, -210px);
-            opacity: 0.8; cursor: pointer;
-             z-index: 1;
-            box-shadow: 5px 5px 5px rgba(61, 57, 57, 0.397);
-            width: 40px; height:40px; border-radius: 20px;
-             display:inline-block; background-color: white; background-image: url(./cgv_image/arrow.png);
-            background-repeat: no-repeat; border:0px;
-            background-position: center center;
-            background-size: 10px; }
-
-        .ebox img,
-        .ebox { width: 320px; height:200px;  
+        .ebox,
+        .ebox img { width: 320px; height:200px;  
          border-radius: 10px; transition-duration: 0.5s;}
 
-         .ebox{  overflow: hidden;
-                }
-
-        .event-wrapper h4{ display:block; color: black;
-         width:320px; text-align: left; padding-top: 10px;}
-
-         .event-wrapper h5{ color: gray; width: 320px; text-align: left;
-         }
+         .ebox{ overflow: hidden;}
 
         .ebox img:hover {
              transform: scale(1.1);
@@ -246,12 +196,6 @@
         .info-list{ display: flex; gap:20px;  justify-content: center; }
         .info-list li a{ display: block; font-size: 12px; font-weight: bold;
         color: gray;  }
-
-
-
-      
-
-       
 
         
     </style>
@@ -397,71 +341,21 @@
                     </div>
                 </div>
             </div>
-            <button id="button3"></button>
             <div class="event">
                 <h2>EVENT</h2>
-                <button id="button1"></button>
-                 
                 <div class="event-box">
-                   
-                    
-                    <div class="event-wrapper">
-                        <div class="ebox ebox01">
-                            <a href="#"><img src="./cgv_image/cgvplus.jpg" alt=""></a>
-                            
-                        </div>
-                        <a href="#"><h4>CGV x TVING 월정기 혜택[CGV PLUS]</h4></a>
-                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
-                    </div>
-                    
-                    <div class="event-wrapper">
-                        <div class="ebox ebox02">
-                            <a href="#"><img src="./cgv_image/sale.jpg" alt=""></a>
-                        </div>
-                        <a href="#"><h4>우리동네 CGV 카카오톡 채널 추가하자!</h4></a>
-                        <a href="#"><h5>2022.12.19~2023.01.17</h5></a>
+                    <div class="ebox ebox01">
+                        <a href="#"><img src="./cgv_image/cgvplus.jpg" alt=""></a>
                     </div>
 
-
-                    <div class="event-wrapper">
-                        <div class="ebox ebox03">
-                            <a href="#"><img src="./cgv_image/filmmark.jpg" alt=""></a>
-                        </div>
-                        <a href="#"><h4>[영웅] 필름마크</h4></a>
-                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
+                    <div class="ebox ebox02">
+                        <a href="#"><img src="./cgv_image/sale.jpg" alt=""></a>
                     </div>
-                    
-
-                    <div class="event-wrapper">
-                        <div class="ebox ebox04">
-                            <a href="#"><img src="./cgv_image/3000.jpeg" alt=""></a>
-                        </div>
-                        <a href="#"><h4>[3000년의 기다림]필름마크</h4></a>
-                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
+                    <div class="ebox ebox03">
+                        <a href="#"><img src="./cgv_image/filmmark.jpg" alt=""></a>
                     </div>
-
-                    <div class="event-wrapper">
-                        <div class="ebox ebox05">
-                            <a href="#"><img src="./cgv_image/switch.jpeg" alt=""></a>
-                        </div>
-                        <a href="#"><h4>[스위치]필름마크</h4></a>
-                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
-                    </div>
-
-                    <div class="event-wrapper">
-                        <div class="ebox ebox06">
-                            <a href="#"><img src="./cgv_image/vip.jpg" alt=""></a>
-                        </div>
-                        <a href="#"><h4>[CGV VIP] VIP PLAY</h4></a>
-                        <a href="#"><h5>2022.12.02~2032.12.02</h5></a>
-                    </div>
-                    
-                    
                 </div>
-                
-                
             </div>
-            <button id="button2"></button>
 
             <div class="special">
                 <h2>특별관</h2>
@@ -578,51 +472,6 @@
 
         })
 
-    </script>
-
-    <script>
-
-        const button2 = document.querySelector('#button2');
-        const eventBox = document.querySelector('.event-box');
-        const event = document.querySelector('.event')
-
-        const wid = eventBox.getBoundingClientRect().width;
-        const eWid = event.getBoundingClientRect().width;
-
-        
-
-        button2.addEventListener('click',function(){
-
-            
-            let x = -eWid;
-
-            console.log(x);
-
-
-            eventBox.style.transform = 'translate('+ x +'px)';
-
-        })
-
-        const button3 = document.querySelector('#button3');
-
-        button3.addEventListener('click', function(){
-
-            
-            
-            let y = 0;
-
-            eventBox.style.transform = 'translate(' + y + 'px)';
-            
-        })
-
-
-
-        
-
-
-
-        
-      
     </script>
 
      
